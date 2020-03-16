@@ -1,0 +1,521 @@
+html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+*,h1,h2,h3,h4,h5,h6{margin:0;padding:0;border:0;}
+ul{list-style: none;}
+a{text-decoration: none;}
+/*
+Theme Name: Developer
+Version: 1.0
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Author: Amir Kabiri
+Author URI: https://wordpress.org/
+Theme URI: https://wordpress.org/themes/twentytwenty/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+$primary-color : #677896;
+$secondary-color: #272638;
+
+$text-color : $secondary-color;
+$background-color : #444;
+
+$entrance-animation-duration : .5s;
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba($primary-color, .3);
+}
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius:20px;
+}
+a, body{
+  font-family: 'Montserrat', sans-serif;
+  color: $text-color;
+  direction: ltr;
+  font-size:14px;
+}
+.container{
+  width:calc(100% - 200px);
+  margin:0 100px;
+  box-sizing: border-box;
+}
+.row{
+  width:100%;
+}
+.non-opacity{
+  opacity: 0;
+}
+@media (max-width: 1000px) {
+  .container{
+    width:calc(100% - 40px);
+    margin:0 20px;
+  }
+}
+
+.top-entrance-animation{
+  animation: top-entrance-animation $entrance-animation-duration ease-out forwards;
+}
+.bottom-entrance-animation{
+  animation: bottom-entrance-animation $entrance-animation-duration ease-out forwards;
+}
+.left-entrance-animation{
+  animation: left-entrance-animation $entrance-animation-duration ease-out forwards;
+}
+.right-entrance-animation{
+  animation: right-entrance-animation $entrance-animation-duration ease-out forwards;
+}
+@keyframes top-entrance-animation {
+  from{
+    transform: translate(0, -100px);
+    opacity: 0;
+  }
+  to{
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes bottom-entrance-animation {
+  from{
+    transform: translate(0, 100px);
+    opacity: 0;
+  }
+  to{
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes left-entrance-animation {
+  from{
+    transform: translate(-100px, 0);
+    opacity: 0;
+  }
+  to{
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes right-entrance-animation {
+  from{
+    transform: translate(100px, 0);
+    opacity: 0;
+  }
+  to{
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+#header{
+  margin-top:30px;
+  width: 100%;
+
+  > .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    > .right{
+      width:40%;
+    }
+    > .left{
+      width:55%;
+      overflow: hidden;
+      display: flex;
+      position: relative;
+
+      .title{
+        transform: rotate(-90deg);
+        transform-origin:left bottom;
+        position: absolute;
+        width:100%;
+        z-index:50;
+
+        > span{
+          position: absolute;
+          bottom: 0;
+          right: 100px;
+          font-size: 50px;
+          font-weight: bold;
+          color:rgba($text-color, .3);
+        }
+        &:before{
+          content:'';
+          display: block;
+          padding-bottom:calc(100% - 19px);
+        }
+      }
+      .content{
+        position: relative;
+        z-index:100;
+        margin-left:auto;
+        width:calc(100% - 50px);
+      }
+    }
+  }
+
+  #header-photo{
+    $size : 200px;
+    width: 100%;
+    //height: $size;
+    object-fit: contain;
+  }
+  #header-hello{
+    font-weight: normal;
+    font-size:40px;
+    color:rgba($text-color, .7);
+  }
+  #header-name{
+    font-size:50px;
+  }
+  #header-job{
+    display: flex;
+    border-top:1px solid rgba($background-color, .3);
+    border-bottom:1px solid rgba($background-color, .3);
+    font-size:20px;
+    margin:30px 0;
+    padding:8px 0;
+    color:rgba($text-color, .7);
+    width:max-content;
+
+    > li{
+      &::after{
+        margin:0 10px;
+        content : '/';
+      }
+      &:last-child::after{
+        display: none;
+      }
+    }
+  }
+  #header-description{
+    text-align: justify;
+    line-height: 27px;
+    color:rgba($text-color, .7);
+  }
+}
+@media (max-width: 800px) {
+  #header{
+    > .container{
+      flex-direction: column;
+
+      > .right{
+        order:1;
+        width:100%;
+      }
+      > .left{
+        margin-top:30px;
+        order:2;
+        width:100%;
+      }
+    }
+  }
+}
+
+
+#main{
+  margin-top:50px;
+
+  > .container{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+#content{
+  width:calc(70% - 100px);
+
+  .title{
+    display: flex;
+    align-items: flex-end;
+
+    > h2{
+      font-size: 50px;
+      font-weight: bold;
+      color:rgba($text-color, .3);
+      margin-right:10px;
+    }
+    &::after{
+      position: relative;
+      top:-10px;
+      content: '';
+      display: block;
+      flex: 1;
+      height:1px;
+      background: rgba($background-color, .3);
+    }
+  }
+}
+#sidebar{
+  width:30%;
+  margin-top:40px;
+}
+
+@media (max-width: 1000px) {
+
+  #main{
+    > .container{
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  #content {
+    width: 100%;
+  }
+  #sidebar{
+    width:100%;
+    margin-top:50px;
+  }
+}
+
+#skills{
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top:30px;
+
+  > ul{
+    width:max-content;
+    text-align: right;
+
+    > li{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom:20px;
+
+      > span{
+
+      }
+      > .skill-level{
+        margin-left:10px;
+      }
+    }
+  }
+}
+.skill-level{
+  width:200px;
+  height:10px;
+  border-radius:20px;
+  overflow: hidden;
+  display: block;
+  background: rgba($primary-color, .2);
+  position: relative;
+
+  > span{
+    border-radius:inherit;
+    position: absolute;
+    left: 0;
+    display: block;
+    top: 0;
+    bottom: 0;
+    background: $primary-color;
+    height:100%;
+    width:50%;
+    transition-timing-function: ease-out;
+    transition: width .4s;
+  }
+}
+
+@media (max-width: 700px) {
+
+  #skills{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.box{
+  width:100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin-bottom:50px;
+
+  &:last-child{
+    margin-bottom:0;
+  }
+
+  .box-content{
+  }
+  .box-title{
+    top: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin:left bottom;
+    width:100%;
+
+    > span{
+      bottom:0;
+      position: absolute;
+      right:0;
+      font-size: 50px;
+      font-weight: bold;
+      color:rgba($text-color, .3);
+    }
+  }
+}
+
+.sidebar-list{
+  > li{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:30px;
+
+    &:last-child{
+      margin-bottom:0;
+    }
+    > strong {
+      margin-bottom:10px;
+
+      &:after{
+        content: ' :';
+      }
+    }
+    > span{
+      color : rgba($text-color, .7);
+    }
+  }
+}
+
+
+#experiences-box{
+  margin-top:50px;
+}
+#experiences{
+  display: flex;
+  flex-direction: column;
+  min-height: 290px;
+
+  .experience{
+    position: relative;
+    display: flex;
+    padding-bottom:30px;
+    justify-content: flex-end;
+
+    .experience-period{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      color: $primary-color;
+      font-weight: bold;
+
+      &::after{
+        content:'';
+        margin:5px 0;
+        display: block;
+        height:100%;
+        width:1px;
+        background: rgba($primary-color, .3);
+      }
+    }
+    .experience-content{
+      width:calc(100% - 55px);
+    }
+    .experience-content-job{
+      text-transform: uppercase;
+    }
+    .experience-content-company{
+      font-weight: bold;
+    }
+    .experience-content-description{
+      color:rgba($text-color, .7);
+      margin-top:10px;
+      line-height: 21px;
+    }
+
+    &:last-child{
+      padding-bottom:0;
+
+      .experience-period::after{
+        display: none;
+      }
+    }
+  }
+}
+
+#footer{
+  margin-top:50px;
+  padding-bottom:30px;
+
+  > .container{
+    display: flex;
+  }
+}
+#ref-box{
+  min-height:101px;
+  width:40%;
+  height:max-content;
+  margin-bottom:0;
+ }
+#ref{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  li:nth-child(2){
+    margin-bottom:5px;
+  }
+}
+#education{
+  width:80%;
+
+  > .title{
+    font-size: 50px;
+    font-weight: bold;
+    color:rgba($text-color, .3);
+  }
+  > .content{
+    display: flex;
+    justify-content: flex-start;
+    margin-top:20px;
+
+    .box{
+      margin-bottom:0;
+      min-height:72px;
+    }
+    .box-title{
+      > span{
+        color:$primary-color;
+        font-size:14px;
+      }
+    }
+    .box-content{
+      display: flex;
+      flex-direction: column;
+
+      > *{
+        margin-bottom:10px;
+        &:last-child{
+          margin-bottom:0;
+        }
+      }
+    }
+  }
+}
+@media(max-width: 1000px){
+  #footer{
+    > .container{
+      flex-direction: column;
+    }
+  }
+  #education{
+    order:1;
+    width:100%;
+  }
+  #ref-box{
+    width:100%;
+    margin-top:50px;
+    order:2;
+  }
+}
