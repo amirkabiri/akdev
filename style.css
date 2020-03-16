@@ -383,7 +383,7 @@ a, body {
   display: flex;
   align-items: flex-end;
 }
-#content .title > h2 {
+#content .title > span {
   font-size: 50px;
   font-weight: bold;
   color: rgba(39, 38, 56, 0.3);
@@ -433,7 +433,7 @@ a, body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 #skills > ul > li > .skill-level {
   margin-left: 10px;
@@ -514,7 +514,7 @@ a, body {
 }
 
 #experiences-box {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 #experiences {
@@ -569,8 +569,8 @@ a, body {
 }
 
 #footer {
-  margin-top: 50px;
-  padding-bottom: 30px;
+  margin-top: 80px;
+  padding-bottom: 50px;
 }
 #footer > .container {
   display: flex;

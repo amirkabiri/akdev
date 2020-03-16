@@ -216,7 +216,6 @@ a, body{
 
 #main{
   margin-top:50px;
-
   > .container{
     display: flex;
     justify-content: space-between;
@@ -229,7 +228,7 @@ a, body{
     display: flex;
     align-items: flex-end;
 
-    > h2{
+    > span{
       font-size: 50px;
       font-weight: bold;
       color:rgba($text-color, .3);
@@ -282,7 +281,7 @@ a, body{
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      margin-bottom:20px;
+      margin-bottom:30px;
 
       > span{
 
@@ -381,7 +380,7 @@ a, body{
 
 
 #experiences-box{
-  margin-top:50px;
+  margin-top:80px;
 }
 #experiences{
   display: flex;
@@ -440,8 +439,8 @@ a, body{
 }
 
 #footer{
-  margin-top:50px;
-  padding-bottom:30px;
+  margin-top:80px;
+  padding-bottom:50px;
 
   > .container{
     display: flex;
