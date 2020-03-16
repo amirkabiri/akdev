@@ -18,6 +18,7 @@ window.onscroll = function(){
 
 // header animation
 window.onload = async function(){
+    $('#loading').style.display = 'none';
     $('#header-name').classList.add('top-entrance-animation');
     $('#header-hello').classList.add('top-entrance-animation');
     $('#header-job').classList.add('top-entrance-animation');
