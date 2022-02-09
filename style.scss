@@ -13,6 +13,7 @@ Author URI: https://akdev.ir
 
 $primary-color : #677896;
 $secondary-color: #272638;
+$link-color : #2196F3;
 
 $text-color : $secondary-color;
 $background-color : #444;
@@ -51,6 +52,10 @@ a, body{
     width:calc(100% - 40px);
     margin:0 20px;
   }
+}
+
+.link-color{
+  color: $link-color;
 }
 
 .top-entrance-animation{
@@ -179,6 +184,9 @@ a, body{
     color:rgba($text-color, .7);
     width:max-content;
 
+    *{
+      font-size: inherit;
+    }
     > li{
       &::after{
         margin:0 10px;
@@ -403,7 +411,13 @@ a, body{
       height: 100%;
       color: $primary-color;
       font-weight: bold;
+      font-size: 16px;
 
+      & > span:nth-child(2){
+        color: lighten($primary-color, 15);
+        font-weight: lighter;
+        font-size: 14px;
+      }
       &::after{
         content:'';
         margin:5px 0;
@@ -426,6 +440,14 @@ a, body{
       color:rgba($text-color, .7);
       margin-top:10px;
       line-height: 21px;
+
+      ul{
+        list-style: circle;
+        padding-left: 20px;
+        li{
+          margin-top: 5px;
+        }
+      }
     }
 
     &:last-child{
