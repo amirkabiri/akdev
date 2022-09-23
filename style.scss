@@ -449,6 +449,20 @@ a, body{
         }
       }
     }
+    .experience-content-gallery{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+
+      img {
+        border-radius: 10px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+    }
 
     &:last-child{
       padding-bottom:0;
