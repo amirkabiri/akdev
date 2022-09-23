@@ -5,6 +5,7 @@
     "build:style": "sass style.scss style.css --style compressed"
   },
   "devDependencies": {
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "sass": "^1.55.0"
   }
 }
