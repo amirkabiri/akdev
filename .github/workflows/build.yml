@@ -33,7 +33,7 @@ jobs:
         uses: actions/configure-pages@v2
 
       - name: Install Dependencies using yarn
-      - uses: borales/actions-yarn@v3.0.0
+        uses: borales/actions-yarn@v3.0.0
         with:
           cmd: install
 
