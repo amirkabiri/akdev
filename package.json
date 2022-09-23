@@ -6,7 +6,9 @@
     "build": "npm run build:style"
   },
   "devDependencies": {
+    "glob": "^8.0.3",
     "prettier": "^2.7.1",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "sharp": "^0.31.0"
   }
 }
