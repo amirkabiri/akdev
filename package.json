@@ -2,7 +2,8 @@
   "scripts": {
     "serve": "live-server .",
     "watch:style": "sass style.scss style.css --watch",
-    "build:style": "sass style.scss style.css --style compressed"
+    "build:style": "sass style.scss style.css --style compressed",
+    "build": "npm run build:style"
   },
   "devDependencies": {
     "prettier": "^2.7.1",
