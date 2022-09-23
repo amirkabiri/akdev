@@ -1,4 +1,4 @@
-name: Deploy static content to Pages
+name: Deploy to Github Pages
 
 on:
   push:
@@ -31,12 +31,16 @@ jobs:
       
       - name: Setup Pages
         uses: actions/configure-pages@v2
-      
+
+      - name: Install Dependencies using yarn
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
       - run: npm run build --if-present
       - run: npm run test --if-present
       
