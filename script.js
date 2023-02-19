@@ -2,6 +2,16 @@ window.$select = (selector) => document.querySelector(selector);
 window.$$ = (selector) => document.querySelectorAll(selector);
 const sleep = (miliSeconds) => new Promise((resolve) => setTimeout(resolve, miliSeconds));
 
+let lightBoxLoaded = false;
+function loadLightBox(){
+  if(lightBoxLoaded) return;
+  lightBoxLoaded = true;
+  const lightBoxStyles = document.createElement('link');
+  lightBoxStyles.href = 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css';
+  lightBoxStyles.rel = 'stylesheet';
+  document.head.appendChild(lightBoxStyles);
+}
+
 function isElementInViewport(el) {
   let rect = el.getBoundingClientRect();
   return (
@@ -24,11 +34,12 @@ window.onload = async function () {
   $select("#header > .container > .right").classList.add("right-entrance-animation");
   await sleep(500);
   $select("#header-description").classList.add("bottom-entrance-animation");
-
-  const lightBoxStyles = document.createElement('link');
-  lightBoxStyles.href = 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css';
-  lightBoxStyles.rel = 'stylesheet';
-  document.head.appendChild(lightBoxStyles);
+  
+  if(typeof requestIdleCallback === 'function'){
+    requestIdleCallback(loadLightBox);
+  } else {
+    setTimeout(loadLightBox, 500); 
+  }
 };
 
 $$(".box").forEach((box) => {
