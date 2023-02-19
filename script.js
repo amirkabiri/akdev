@@ -34,13 +34,11 @@ window.onload = async function () {
   $select("#header > .container > .right").classList.add("right-entrance-animation");
   await sleep(500);
   $select("#header-description").classList.add("bottom-entrance-animation");
-  
-  if(typeof requestIdleCallback === 'function'){
-    requestIdleCallback(loadLightBox);
-  } else {
-    setTimeout(loadLightBox, 500); 
-  }
 };
+
+$$(".experience-content-gallery > a").forEach(el => {
+  loadLightBox();
+});
 
 $$(".box").forEach((box) => {
   const [boxTitle, boxContent] = box.children;
