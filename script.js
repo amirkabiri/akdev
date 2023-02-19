@@ -1,4 +1,4 @@
-window.$ = (selector) => document.querySelector(selector);
+window.$select = (selector) => document.querySelector(selector);
 window.$$ = (selector) => document.querySelectorAll(selector);
 const sleep = (miliSeconds) => new Promise((resolve) => setTimeout(resolve, miliSeconds));
 
@@ -16,14 +16,14 @@ window.onscroll = function () {};
 
 // header animation
 window.onload = async function () {
-  $("#loading").style.display = "none";
-  $("#header-name").classList.add("top-entrance-animation");
-  $("#header-hello").classList.add("top-entrance-animation");
-  $("#header-job").classList.add("top-entrance-animation");
+  $select("#loading").style.display = "none";
+  $select("#header-name").classList.add("top-entrance-animation");
+  $select("#header-hello").classList.add("top-entrance-animation");
+  $select("#header-job").classList.add("top-entrance-animation");
   await sleep(500);
-  $("#header > .container > .right").classList.add("right-entrance-animation");
+  $select("#header > .container > .right").classList.add("right-entrance-animation");
   await sleep(500);
-  $("#header-description").classList.add("bottom-entrance-animation");
+  $select("#header-description").classList.add("bottom-entrance-animation");
 
   const lightBoxStyles = document.createElement('link');
   lightBoxStyles.href = 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css';
@@ -41,9 +41,9 @@ $$(".box").forEach((box) => {
   boxContent.style.width = `calc(100% - ${titleHeight + 10}px)`;
 });
 
-const headerTitleHeight = parseInt(getComputedStyle($("#header .title > span")).height);
-$("#header .title").style.right = `-${headerTitleHeight}px`;
-$("#header .content").style.width = `calc(100% - ${headerTitleHeight + 10}px)`;
+const headerTitleHeight = parseInt(getComputedStyle($select("#header .title > span")).height);
+$select("#header .title").style.right = `-${headerTitleHeight}px`;
+$select("#header .content").style.width = `calc(100% - ${headerTitleHeight + 10}px)`;
 
 $$(".square").forEach((el) => {
   el.style.height = getComputedStyle(el).width;
