@@ -16,11 +16,6 @@ window.onscroll = function () {};
 
 // header animation
 window.onload = async function () {
-  const lightBoxStyles = document.createElement('link');
-  link.href = 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css';
-  link.rel = 'stylesheet';
-  document.head.appendChild(lightBoxStyles);
-
   $("#loading").style.display = "none";
   $("#header-name").classList.add("top-entrance-animation");
   $("#header-hello").classList.add("top-entrance-animation");
@@ -29,6 +24,11 @@ window.onload = async function () {
   $("#header > .container > .right").classList.add("right-entrance-animation");
   await sleep(500);
   $("#header-description").classList.add("bottom-entrance-animation");
+
+  const lightBoxStyles = document.createElement('link');
+  lightBoxStyles.href = 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css';
+  lightBoxStyles.rel = 'stylesheet';
+  document.head.appendChild(lightBoxStyles);
 };
 
 $$(".box").forEach((box) => {
