@@ -3,12 +3,13 @@ window.$$ = (selector) => document.querySelectorAll(selector);
 const sleep = (miliSeconds) => new Promise((resolve) => setTimeout(resolve, miliSeconds));
 
 let lightBoxLoaded = false;
-function loadLightBox(){
-  if(lightBoxLoaded) return;
+function loadLightBox() {
+  if (lightBoxLoaded) return;
   lightBoxLoaded = true;
-  const lightBoxStyles = document.createElement('link');
-  lightBoxStyles.href = 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css';
-  lightBoxStyles.rel = 'stylesheet';
+  const lightBoxStyles = document.createElement("link");
+  lightBoxStyles.href =
+    "https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css";
+  lightBoxStyles.rel = "stylesheet";
   document.head.appendChild(lightBoxStyles);
 }
 
@@ -36,7 +37,7 @@ window.onload = async function () {
   $select("#header-description").classList.add("bottom-entrance-animation");
 };
 
-$$(".experience-content-gallery > a").forEach(el => {
+$$(".experience-content-gallery > a").forEach((el) => {
   loadLightBox();
 });
 
@@ -50,7 +51,9 @@ $$(".box").forEach((box) => {
   boxContent.style.width = `calc(100% - ${titleHeight + 10}px)`;
 });
 
-const headerTitleHeight = parseInt(getComputedStyle($select("#header .title > span")).height);
+const headerTitleHeight = parseInt(
+  getComputedStyle($select("#header .title > span")).height,
+);
 $select("#header .title").style.right = `-${headerTitleHeight}px`;
 $select("#header .content").style.width = `calc(100% - ${headerTitleHeight + 10}px)`;
 
